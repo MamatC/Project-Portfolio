@@ -1,0 +1,33 @@
+
+$bgblack : #1D1D1D;
+$or : #D6BA2C;
+$white : #F1F1F1;
+$whiteCube : #F2F2F2;
+
+// dégradé bordures cubes
+$lineBg : rgb(200,33,146);
+$lineGradient : linear-gradient(90deg, rgba(200,33,146,1) 0%, rgba(68,214,188,1) 34%, rgba(35,255,0,1) 66%, rgba(250,141,0,1) 100%);
+
+//déclaration des polices
+// police du nom prénom
+@font-face {
+    font-family: 'creattionDemo';
+    src: url(/assets/fonts/CreattionDemo.otf) format('truetype');
+  }
+// police des titres arrière plan
+@font-face {
+    font-family: 'arialic';
+    src: url(/assets/fonts/ArialicHollow.ttf) format('truetype');
+  }
+// polices des tritres premier plan
+@font-face {
+    font-family: 'azonix';
+    src: url(/assets/fonts/Azonix.otf) format('truetype');
+  }
+@font-face {
+    font-family: 'roboto';
+    src: url(/assets/fonts/ROBOTO-REGULAR.TTF) format('truetype');
+  }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+  
+

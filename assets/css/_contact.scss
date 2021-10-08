@@ -1,0 +1,73 @@
+//***************** SECTION CONTACT
+
+#timbre{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+
+    img{
+        width: 20%;
+        
+    }
+}
+
+// formulaire
+
+form{
+
+    display: flex;
+    margin-top: 40px;
+
+    #message{
+
+        width: 45%;
+
+        textarea{
+            width: 100%;
+            background-color: $bgblack;
+            color: $white;
+            border-left: hidden;
+            border-top: hidden;
+            border-bottom:hidden;
+            margin-left: 10px;
+            outline: none;
+            font-family: 'roboto';
+            font-size: 0.8em;
+        }
+    }
+    
+    #contactRight{
+        
+        width:30%;
+        display: block;
+        margin-left: 15%;
+        
+        input{
+            width: 100%;
+            text-align: right;
+            color: $white;
+            background-color: $bgblack;
+            border-left: hidden;
+            border-top: hidden;
+            border-right: hidden;
+            margin-top: 20px;
+            outline: none;
+            font-family: 'roboto';
+            
+        }
+
+        #btn{
+            background-color: $or;
+            border: none;
+            margin-top: 40px;
+            width: 70%;
+            font-family: 'roboto';
+            padding: 5px 10px 5px 10px;
+            text-align: center;
+        }
+        
+    }
+}
+@media screen and (min-width:415px) {
+
+}

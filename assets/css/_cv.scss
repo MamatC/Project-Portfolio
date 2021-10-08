@@ -1,0 +1,63 @@
+body{
+
+    section{
+
+        #containerCV{
+            display: flex;
+            margin-top: 40px;
+            justify-content: flex-end;
+            overflow-x: hidden;
+
+            #titreCV{
+                width: 270%;
+
+                //POSITIONNEMENT DU H1 CV
+                
+                .positionCV{
+                    position: relative;
+                    height: 9em;
+                    overflow: hidden;
+                    scrollbar-width: none;
+                    
+                    // style et position du 'CV' d'arrière plan
+                    p{
+                        // utilisation du mixin déclaré dans _'splashscreen.scss'
+                        @include styleName('arialic', 6em, normal, $or);
+                        position: absolute;
+                        width : 200%;
+                        font-size: 6em;
+                        margin: 0 0 0 10%;
+                        top : 0;
+                        left : 0;
+                        z-index: 0;
+                    }
+                    
+                    // style et position du 'CV' premier plan
+                    h1{
+                        // utilisation du mixin déclaré dans _'splashscreen.scss'
+                        @include styleName('azonix', 2em, normal, $white);
+                        position: inherit;
+                        color: $white;
+                        padding-top: 30%;
+                        text-align: center;
+                        z-index: 1;
+                        margin: 0 5px 0 20px;
+                        
+                    }
+                }
+            }    
+        }
+
+        // taille et positionnement de l'image
+        #divLeftCV{
+            width: 100%;
+        }
+        #cv{
+            width: 200px;
+        }
+    }
+
+}
+@media screen and (min-width:415px) {
+    
+}

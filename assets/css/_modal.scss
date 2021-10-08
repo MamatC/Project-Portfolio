@@ -1,0 +1,77 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: $bgblack;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: $white;
+    font-family: 'roboto';
+    border-color: $or;
+    height: 60%;
+    
+    .modal-scroll{
+      height: 70%;
+      overflow-y: scroll;
+      margin-top: 10px;
+
+      .gridModal{
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+        grid-gap: 10px;
+        text-align: center;
+    
+        .logoTaille img{
+            width: 50px;
+        }
+      }
+     
+      .content-logo{
+        width: 60%;
+        display: flex;
+      }
+     }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: $or;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #modalDogger{
+    width: 100%;
+  }
+  #tailleLogo{
+    width: 30%;
+  }
+  #tailleGit{
+    width: 50%;
+  }
+  #tailleOrdi{
+    width: 50%;
+  }

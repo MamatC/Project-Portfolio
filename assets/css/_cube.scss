@@ -1,0 +1,150 @@
+
+#filterOr{
+    position: fixed;
+    width: 150%;
+    height: 110%;
+    left: -25%;
+}
+
+.container_cube {
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+}
+  
+#portaCubo {
+    perspective: 300vw;
+    position: fixed;
+    width: 100%;
+    height: 90%;
+}
+
+#cubo {
+  width: 200px;
+  height: 200px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  transform-style: preserve-3d;
+  animation: girar 5s infinite linear running;
+}
+
+.lienCube{
+    font-family: 'azonix', Arial, Helvetica, sans-serif ;
+    font-size: 0.4em;
+    color: $or;
+}
+
+.styleFace{
+    background-color: $whiteCube;
+    border: 1px solid $lineBg;
+    border-image: $lineGradient;
+    border-image-slice: 1;
+}
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#face1 {
+    transform: translateZ(100px);
+    @extend .styleFace;
+}
+#face2 {
+    transform: translateZ(-100px);
+    @extend .styleFace;
+} 
+
+#face3 {
+    transform: rotateY(-90deg) translateZ(100px);
+    @extend .styleFace;
+}
+
+#face4 {
+    transform: rotateY(90deg) translateZ(100px);
+    @extend .styleFace;
+}
+
+#face5 {
+    transform: rotateX(90deg) translateZ(100px);
+    @extend .styleFace;
+}
+
+#face6 {
+    transform: rotateX(-90deg) translateZ(100px);
+    @extend .styleFace;
+  }
+
+@media screen and (min-width:415px){
+    #container{
+        width: 80%;
+        margin:auto;
+    }
+    .container_cube {
+        height: 400vh;
+    }
+    #portaCubo {
+        perspective: 150vw;
+    }
+    #cubo {
+        width: 300px !important;
+        height: 300px !important;
+        top:50% !important;
+    }
+    // .face{
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    // }
+    #face1 {
+        transform: translateZ(150px);
+    }
+    #face2 {
+        transform: translateZ(-150px);
+    } 
+    #face3 {
+        transform: rotateY(-90deg) translateZ(150px);
+    } 
+    #face4 {
+        transform: rotateY(90deg) translateZ(150px);
+    } 
+    #face5 {
+        transform: rotateX(90deg) translateZ(150px);
+    } 
+    #face6 {
+        transform: rotateX(-90deg) translateZ(150px);
+    } 
+    #portaCubo {
+        perspective: 300vw;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #cubo {
+      width: 200px;
+      height: 200px;
+      line-height: 300px;
+      text-align: center;
+      font-size: 70px;
+      top: 60%;
+      left: 60%;
+      margin-top: -100px;
+      margin-left: -100px;
+    }
+    // #cubOr{
+    //     left: -20%;
+    // }
+    #filterOr{
+        position: fixed;
+        width: 150%;
+        height: 110%;
+        // left: -18%;
+    }
+}
