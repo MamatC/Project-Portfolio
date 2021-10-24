@@ -1,11 +1,15 @@
 
+#bg-photo{
+     display: none;
+ }
+
 #filterOr{
+    display: block;
     position: fixed;
     width: 150%;
     height: 110%;
     left: -25%;
 }
-
 .container_cube {
     height: 300vh;
     display: flex;
@@ -41,12 +45,12 @@
 }
 
 .styleFace{
-    background-color: $whiteCube;
     border: 1px solid $lineBg;
     border-image: $lineGradient;
     border-image-slice: 1;
 }
 .face{
+    background-color:rgba(0,0,0,0.65);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -81,7 +85,18 @@
     @extend .styleFace;
   }
 
+
+
+//*****************RESPONSIVE WEB A PARTIR DE 415px  
+
 @media screen and (min-width:415px){
+    
+    #bg-photo{
+        display: block;
+        width: 100%;
+        position: fixed;
+    }
+
     #container{
         width: 80%;
         margin:auto;
@@ -97,11 +112,6 @@
         height: 300px !important;
         top:50% !important;
     }
-    // .face{
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    // }
     #face1 {
         transform: translateZ(150px);
     }
@@ -130,21 +140,29 @@
     #cubo {
       width: 200px;
       height: 200px;
-      line-height: 300px;
+      line-height: 270px;
       text-align: center;
-      font-size: 70px;
+      font-size: 5em;
       top: 60%;
       left: 60%;
       margin-top: -100px;
       margin-left: -100px;
+        
+        a{
+            transition: 500ms;
+        }
+
+        a:hover{
+            transition: 500ms;
+            color: $whiteCube;
+        }
     }
-    // #cubOr{
-    //     left: -20%;
-    // }
+    
     #filterOr{
+        display: none;
         position: fixed;
         width: 150%;
         height: 110%;
-        // left: -18%;
+        left: -11%;
     }
 }

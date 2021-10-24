@@ -17,13 +17,13 @@
 }
 #firstName {
   font-family: "creattionDemo";
-  font-size: 5em;
+  font-size: 6em;
   font-weight: lighter;
   color: #F1F1F1;
   text-transform: capitalize;
   margin: 20px 0 0 0;
   position: fixed;
-  left: 24%;
+  left: 19%;
   z-index: 1;
 }
 
@@ -48,14 +48,21 @@
 
 @media screen and (min-width: 415px) {
   #firstName {
-    left: 10%;
+    left: 2%;
+    font-size: 7em;
   }
 
   #name {
-    left: 13%;
+    left: 5%;
+    font-size: 8.5em;
   }
 }
+#bg-photo {
+  display: none;
+}
+
 #filterOr {
+  display: block;
   position: fixed;
   width: 150%;
   height: 110%;
@@ -98,7 +105,6 @@
 }
 
 .styleFace, #face6, #face5, #face4, #face3, #face2, #face1 {
-  background-color: #F2F2F2;
   border: 1px solid #c82192;
   -o-border-image: linear-gradient(90deg, #c82192 0%, #44d6bc 34%, #23ff00 66%, #fa8d00 100%);
      border-image: linear-gradient(90deg, #c82192 0%, #44d6bc 34%, #23ff00 66%, #fa8d00 100%);
@@ -106,6 +112,7 @@
 }
 
 .face {
+  background-color: rgba(0, 0, 0, 0.65);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -136,6 +143,12 @@
 }
 
 @media screen and (min-width: 415px) {
+  #bg-photo {
+    display: block;
+    width: 100%;
+    position: fixed;
+  }
+
   #container {
     width: 80%;
     margin: auto;
@@ -189,26 +202,39 @@
   #cubo {
     width: 200px;
     height: 200px;
-    line-height: 300px;
+    line-height: 270px;
     text-align: center;
-    font-size: 70px;
+    font-size: 5em;
     top: 60%;
     left: 60%;
     margin-top: -100px;
     margin-left: -100px;
   }
+  #cubo a {
+    transition: 500ms;
+  }
+  #cubo a:hover {
+    transition: 500ms;
+    color: #F2F2F2;
+  }
 
   #filterOr {
+    display: none;
     position: fixed;
     width: 150%;
     height: 110%;
+    left: -11%;
   }
 }
 body {
+  background: url(../images/photos/bg-pixel.jpg);
   scrollbar-width: none;
 }
 body section .centerCube {
-  text-align: center;
+  width: 100%;
+  position: fixed;
+  margin: 10px 0 0 10px;
+  z-index: 500;
 }
 body section .centerCube img {
   margin-top: 10px;
@@ -216,7 +242,7 @@ body section .centerCube img {
 }
 body section .positionH1 {
   position: relative;
-  height: 9em;
+  height: 7em;
   overflow: hidden;
   scrollbar-width: none;
 }
@@ -224,14 +250,15 @@ body section .positionH1 p {
   font-family: "arialic";
   font-size: 6em;
   font-weight: normal;
-  color: #D6BA2C;
+  color: #c72292;
   position: absolute;
   width: 200%;
   font-size: 6em;
   margin: 0 0 0 10%;
   top: 0;
-  left: 0;
+  left: 40px;
   z-index: 0;
+  opacity: 0.4;
 }
 body section .positionH1 h1 {
   font-family: "azonix";
@@ -246,37 +273,65 @@ body section .positionH1 h1 {
   margin: 0 5px 0 0;
 }
 body section .card {
-  display: flex;
   margin: 10% 0;
+  margin-top: 10%;
 }
-body section .card p {
+body section .card .cardRight {
+  border-left: 1px solid #D6BA2C;
+  font-size: 0.8em;
+  margin-left: 10px;
+  margin-top: 60px;
+}
+body section .card .cardRight p {
   color: #F1F1F1;
   font-family: "Open Sans", sans-serif;
   margin: 0 10px 10px 10px;
 }
-body section .cardLeft {
-  display: block;
-  width: 74px;
+body section .card .cardRight .cardLeft {
+  width: 100%;
+  position: absolute;
+  -webkit-animation: fadeEffect 5s;
+          animation: fadeEffect 5s;
+  /* fading effect takes 3s */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
-body section .cardLeft p {
+body section .card .cardRight .cardLeft p {
   text-align: left;
   margin: 0 10px 0 10px;
-  width: 65px;
-}
-body section .cardLeft p:first-child {
+  width: 70%;
   font-family: "arialic";
-  font-size: 3.2em;
-  margin-right: 10px;
+  font-size: 4.5em;
+  color: #D6BA2C;
 }
-body section .cardRight {
-  border-left: 1px solid #D6BA2C;
-  font-size: 0.8em;
-  margin-left: 10px;
+@-webkit-keyframes fadeEffect {
+  /* from 0 to full opacity */
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeEffect {
+  /* from 0 to full opacity */
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 415px) {
   body section .centerCube img {
-    width: 5%;
+    width: 10%;
   }
   body section .positionH1 {
     position: relative;
@@ -288,7 +343,8 @@ body section .cardRight {
     font-family: "arialic";
     font-size: 18em;
     font-weight: normal;
-    color: #D6BA2C;
+    color: #c72292;
+    color: #c72292;
     position: absolute;
     margin: 0 0 0 40%;
     z-index: 0;
@@ -301,76 +357,107 @@ body section .cardRight {
     position: inherit;
     color: #F1F1F1;
     z-index: 1;
-    top: -10%;
+    top: -20%;
   }
-  body section .card {
-    display: flex;
+  body section #containerCard .card {
+    position: relative;
   }
-  body section .card p {
-    color: #F1F1F1;
-    font-family: "Open Sans", sans-serif;
-    margin: 0 10px 10px 10px;
+  body section #containerCard .card .cardRight {
+    width: 60%;
+    border-left: 1px solid #D6BA2C;
+    font-size: 2em;
+    margin-left: 5%;
+    margin-top: 7%;
   }
-  body section .cardLeft {
-    display: block;
-    width: 11%;
-  }
-  body section .cardLeft p {
+  body section #containerCard .card .cardRight .cardLeft p {
     text-align: left;
     margin: 0 10px 0 10px;
-    width: 100%;
+    width: 80%;
     font-size: 1.5em;
-  }
-  body section .cardLeft p:first-child {
     font-family: "arialic";
     font-size: 5em;
-    margin-right: 10px;
+    color: #D6BA2C;
   }
-  body section .cardRight {
-    width: 70%;
-    border-left: 1px solid #D6BA2C;
-    font-size: 1.2em;
-    margin-left: 10px;
-  }
-  body section .card2 {
-    justify-content: flex-end;
+  body section #containerCard .card2 {
+    position: relative;
+    left: 33%;
   }
 }
-.comp {
-  color: #F1F1F1;
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-bottom: 50px;
+body #sectionCompetences .positionH1 p {
+  color: #43d7b6;
 }
-
-.grid {
+body .grid {
+  width: 80%;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 2fr);
   grid-gap: 10px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 40%;
+  margin-top: 10%;
 }
-.grid .logoTaille img {
+body .grid .logoTaille {
+  width: 100%;
+}
+body .grid .logoTaille img {
   width: 50px;
+  padding-bottom: 10%;
 }
 
 @media screen and (min-width: 415px) {
-  .comp {
-    font-size: 2.5em;
+  body #sectionCompetences .grid {
+    width: 100%;
   }
-
-  .grid .logoTaille img {
-    width: 40%;
+  body #sectionCompetences .grid .logoTaille img {
+    width: 50%;
   }
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* The Modal (background) */
-.modal {
+body #sectionProjets .positionProjets {
+  position: absolute;
+  z-index: 0;
+}
+body #sectionProjets .positionProjets p {
+  font-family: "arialic";
+  font-size: 6em;
+  font-weight: normal;
+  color: #27c939;
+  position: absolute;
+  width: 200%;
+  font-size: 6em;
+  left: 50px;
+}
+body #sectionProjets .positionProjets h1 {
+  font-family: "azonix";
+  font-size: 2em;
+  font-weight: normal;
+  color: #F1F1F1;
+  position: absolute;
+  color: #F1F1F1;
+  top: 120px;
+  left: 100px;
+}
+body #sectionProjets .containerSlide {
+  height: 12em;
+  overflow-y: hidden;
+}
+body #sectionProjets .containerSlide .slide {
+  position: absolute;
+  overflow-x: scroll;
+  width: 100%;
+  height: 9em;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  /* The Modal (background) */
+}
+body #sectionProjets .containerSlide .slide .myBtn {
+  width: 280px;
+  cursor: pointer;
+}
+body #sectionProjets .containerSlide .slide .modal {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -391,73 +478,119 @@ body {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+  /* Modal Content */
 }
-
-/* Modal Content */
-.modal-content {
-  background-color: #1D1D1D;
+body #sectionProjets .containerSlide .slide .modal .modal-content {
+  background-color: #000000;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
   color: #F1F1F1;
   font-family: "roboto";
-  border-color: #D6BA2C;
+  border: 1px solid #c82192;
+  -o-border-image: linear-gradient(90deg, #c82192 0%, #44d6bc 34%, #23ff00 66%, #fa8d00 100%);
+     border-image: linear-gradient(90deg, #c82192 0%, #44d6bc 34%, #23ff00 66%, #fa8d00 100%);
+  border-image-slice: 1;
   height: 60%;
+  /* The Close Button */
 }
-.modal-content .modal-scroll {
-  height: 70%;
-  overflow-y: scroll;
-  margin-top: 10px;
-}
-.modal-content .modal-scroll .gridModal {
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 10px;
-  text-align: center;
-}
-.modal-content .modal-scroll .gridModal .logoTaille img {
-  width: 50px;
-}
-.modal-content .modal-scroll .content-logo {
-  width: 60%;
-  display: flex;
-}
-
-/* The Close Button */
-.close {
+body #sectionProjets .containerSlide .slide .modal .modal-content .close {
   color: #D6BA2C;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
+body #sectionProjets .containerSlide .slide .modal .modal-content .close:hover,
+body #sectionProjets .containerSlide .slide .modal .modal-content .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-
-#modalDogger {
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll {
+  height: 70%;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll #tailleModal {
   width: 100%;
 }
-
-#tailleLogo {
-  width: 30%;
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll .gridModal {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 10px;
+  text-align: center;
 }
-
-#tailleGit {
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll .gridModal .logoTaille {
+  width: 50px;
+}
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll .content-logo {
+  width: 60%;
+  display: flex;
+}
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll .content-logo #tailleGit {
+  width: 50%;
+}
+body #sectionProjets .containerSlide .slide .modal .modal-content .modal-scroll .content-logo #tailleOrdi {
   width: 50%;
 }
 
-#tailleOrdi {
-  width: 50%;
+@media screen and (min-width: 415px) {
+  body #sectionProjets .positionProjets {
+    position: absolute;
+    height: 19em;
+    z-index: 0;
+  }
+  body #sectionProjets .positionProjets p {
+    font-family: "arialic";
+    font-size: 18em;
+    font-weight: normal;
+    color: #27c939;
+    position: absolute;
+    width: 200%;
+    left: 0.8em;
+    top: -90px;
+  }
+  body #sectionProjets .positionProjets h1 {
+    font-family: "azonix";
+    font-size: 6em;
+    font-weight: normal;
+    color: #F1F1F1;
+    position: absolute;
+    top: 2.7em;
+    left: 4.3em;
+  }
+  body #sectionProjets .containerSlide {
+    margin-bottom: 22em;
+    width: 100%;
+  }
+  body #sectionProjets .containerSlide .slide {
+    scrollbar-width: none;
+    width: 100%;
+    position: absolute;
+    overflow-x: scroll;
+    display: flex;
+    height: 24em;
+    gap: 30px;
+    margin-bottom: 20px;
+    margin: -50px 0;
+  }
+  body #sectionProjets .containerSlide .slide .container img {
+    cursor: pointer;
+    width: 700px;
+    transition: 500ms;
+  }
+  body #sectionProjets .containerSlide .slide .container img:hover {
+    transition: 500ms;
+    opacity: 0.5;
+  }
+  body #sectionProjets .containerSlide .slide .modal .modal-content {
+    height: 90%;
+  }
 }
-
 body section #containerCV {
   display: flex;
-  margin-top: 40px;
+  margin: 40% 0 20% 0;
   justify-content: flex-end;
   overflow-x: hidden;
 }
@@ -474,7 +607,7 @@ body section #containerCV #titreCV .positionCV p {
   font-family: "arialic";
   font-size: 6em;
   font-weight: normal;
-  color: #D6BA2C;
+  color: #d17900;
   position: absolute;
   width: 200%;
   font-size: 6em;
@@ -502,13 +635,43 @@ body section #cv {
   width: 200px;
 }
 
+@media screen and (min-width: 415px) {
+  body section #containerCV #titreCV {
+    width: 60%;
+  }
+  body section #containerCV #titreCV .positionCV {
+    height: 26em;
+  }
+  body section #containerCV #titreCV .positionCV p {
+    font-family: "arialic";
+    font-size: 18em;
+    font-weight: normal;
+    color: #d17900;
+    margin: 0 0 0 20%;
+    top: 80px;
+  }
+  body section #containerCV #titreCV .positionCV h1 {
+    font-family: "azonix";
+    font-size: 9em;
+    font-weight: normal;
+    color: #F1F1F1;
+    margin: 0 5px 0 20px;
+    top: -50px;
+  }
+  body section #containerCV #divLeftCV {
+    width: 40%;
+  }
+  body section #containerCV #divLeftCV img {
+    width: 150%;
+  }
+}
 #timbre {
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
 }
 #timbre img {
-  width: 20%;
+  width: 10%;
 }
 
 form {
@@ -520,11 +683,12 @@ form #message {
 }
 form #message textarea {
   width: 100%;
-  background-color: #1D1D1D;
+  background-color: transparent;
   color: #F1F1F1;
   border-left: hidden;
   border-top: hidden;
   border-bottom: hidden;
+  border-right: 1px solid #D6BA2C;
   margin-left: 10px;
   outline: none;
   font-family: "roboto";
@@ -532,14 +696,14 @@ form #message textarea {
 }
 form #contactRight {
   width: 30%;
-  display: block;
   margin-left: 15%;
 }
 form #contactRight input {
   width: 100%;
   text-align: right;
   color: #F1F1F1;
-  background-color: #1D1D1D;
+  background-color: transparent;
+  border-bottom: 1px solid #D6BA2C;
   border-left: hidden;
   border-top: hidden;
   border-right: hidden;
@@ -555,139 +719,77 @@ form #contactRight #btn {
   font-family: "roboto";
   padding: 5px 10px 5px 10px;
   text-align: center;
-}
-
-body section .centerCubeProjet {
-  height: 9em;
-}
-body .containerSlide {
-  height: 20em;
-}
-body .containerSlide img {
-  cursor: pointer;
-}
-body .containerSlide .slide {
-  width: 100%;
-  position: relative;
-  display: flex;
-  gap: 30px;
-  margin-bottom: 20px;
-  overflow-x: scroll;
-  scrollbar-width: none;
-  margin: -50px 0;
-  z-index: 20;
-}
-body .containerSlide .slide img {
-  width: 250px;
-}
-body .positionProjets {
-  position: relative;
-  height: 9em;
-  overflow: hidden;
-  scrollbar-width: none;
-  z-index: 5;
-}
-body .positionProjets p {
-  font-family: "arialic";
-  font-size: 6em;
-  font-weight: normal;
-  color: #D6BA2C;
-  position: absolute;
-  width: 200%;
-  font-size: 6em;
-  margin: 0 0 0 10%;
-  top: 0;
-  left: 0;
-}
-body .positionProjets h1 {
-  font-family: "azonix";
-  font-size: 2em;
-  font-weight: normal;
-  color: #F1F1F1;
-  position: inherit;
-  color: #F1F1F1;
-  padding-top: 15%;
-  text-align: center;
-  margin: 0 5px 0 0;
+  float: right;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 415px) {
-  .centerCubeProjet {
-    height: 9em;
+  body #sectionContact form #message {
+    font-size: 2.5em;
   }
-
-  .containerSlide {
-    height: 20em;
-  }
-  .containerSlide .slide .container {
-    position: relative;
-    width: 100%;
-  }
-  .containerSlide .slide .container img {
-    cursor: pointer;
-    width: 500px;
-  }
-
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: 0.5s ease;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-
-  .text {
-    background-color: #D6BA2C;
-    color: #F1F1F1;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
-
-  .container:hover .image {
-    opacity: 0.3;
-  }
-
-  .container:hover .middle {
-    opacity: 1;
-  }
-
-  .positionProjets {
-    position: relative;
-    height: 9em;
-    overflow: hidden;
-    scrollbar-width: none;
-    z-index: 5;
-  }
-  .positionProjets p {
-    font-family: "arialic";
-    font-size: 6em;
-    font-weight: normal;
-    color: #D6BA2C;
-    position: absolute;
-    width: 200%;
-    font-size: 6em;
-    margin: 0 0 0 10%;
-    top: 0;
-    left: 0;
-  }
-  .positionProjets h1 {
-    font-family: "azonix";
+  body #sectionContact form #contactRight input {
     font-size: 2em;
-    font-weight: normal;
-    color: #F1F1F1;
-    position: inherit;
-    color: #F1F1F1;
-    padding-top: 15%;
-    text-align: center;
-    margin: 0 5px 0 0;
+  }
+  body #sectionContact form #btn {
+    margin-top: 20%;
   }
 }
 body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: gray;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+img {
+  width: 100px;
+}
+
+.logoTaille {
+  width: 20%;
+}
+
+#col_titre {
+  width: 150px;
+}
+
+#col_date {
+  width: 100px;
+  text-align: center;
+}
+
+#col_tech {
+  width: 100px;
+  text-align: center;
+}
+
+.col_link {
+  width: 100px;
+  font-size: 10px;
+}
+
+body {
   margin: 0;
-  background-color: #1D1D1D;
+  background: #000000;
 }
 body a {
   text-decoration: none;
+}
+
+@media screen and (min-width: 415px) {
+  body {
+    background: url(../images/photos/bg-pixel.jpg);
+  }
 }/*# sourceMappingURL=style.css.map */

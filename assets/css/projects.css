@@ -1,0 +1,42 @@
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+table {
+    border:  1px solid black;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: center;
+}
+
+th{
+    background-color: gray;
+}
+
+th, td{
+    border:  1px solid black;
+
+}
+
+img{
+    width: 100px;
+}
+.logoTaille{
+    width: 20%;
+}
+#col_titre{
+    width: 150px;
+}
+#col_date{
+    width: 100px;
+    text-align: center;
+}
+#col_tech{
+    width: 100px;
+    text-align: center;
+}
+.col_link{
+    width: 100px;
+    font-size: 10px;
+
+}

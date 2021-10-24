@@ -1,77 +1,227 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: $bgblack;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    color: $white;
-    font-family: 'roboto';
-    border-color: $or;
-    height: 60%;
-    
-    .modal-scroll{
-      height: 70%;
-      overflow-y: scroll;
-      margin-top: 10px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  #sectionProjets{
 
-      .gridModal{
-        display: grid;
-        grid-template-columns: repeat(4, 2fr);
-        grid-gap: 10px;
-        text-align: center;
-    
-        .logoTaille img{
-            width: 50px;
-        }
+    .positionProjets{
+      position: absolute;
+      z-index: 0;
+      
+      // style et position du 'a propos' d'arrière plan
+      p{
+          // utilisation du mixin déclaré dans _'splashscreen.scss'
+          @include styleName('arialic', 6em, normal, $lightgreen);
+          position: absolute;
+          width : 200%;
+          font-size: 6em;
+          left: 50px;
       }
-     
-      .content-logo{
-        width: 60%;
+      
+      // style et position du 'a propos' premier plan
+      h1{
+          // utilisation du mixin déclaré dans _'splashscreen.scss'
+          @include styleName('azonix', 2em, normal, $white);
+          position: absolute;
+          color: $white;
+          top:120px;
+          left: 100px;
+      }   
+    }    
+
+    .containerSlide{
+        height: 12em;
+        overflow-y: hidden;
+
+      .slide{
+        position: absolute;
+        overflow-x: scroll;
+        width: 100%;
+        height: 9em;
         display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        .myBtn{
+          width: 280px;
+          cursor: pointer;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 9999; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        
+        
+        /* Modal Content */
+          .modal-content {
+            background-color: $bgblack;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            color: $white;
+            font-family: 'roboto';
+            border: 1px solid $lineBg;
+            border-image: $lineGradient;
+            border-image-slice: 1;
+            height: 60%;
+            
+            /* The Close Button */
+            .close {
+              color: $or;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+            }
+
+
+            .modal-scroll{
+              height: 70%;
+              overflow-y: scroll;
+              margin-top: 10px;
+
+              #tailleModal{
+                  width: 100%;
+                }
+
+              .gridModal{
+                display: grid;
+                grid-template-columns: repeat(4, 2fr);
+                grid-gap: 10px;
+                text-align: center;
+              
+                  .logoTaille{
+                    width: 50px;
+                  }
+              }
+            
+            .content-logo{
+              width: 60%;
+              display: flex;
+
+                #tailleGit{
+                  width: 50%;
+                }
+                #tailleOrdi{
+                  width: 50%;
+                }
+
+              }
+
+            } 
+          }
+        }  
       }
-     }
-  }
+    }
+  } 
+} 
+
+
   
-  /* The Close Button */
-  .close {
-    color: $or;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  #modalDogger{
-    width: 100%;
-  }
-  #tailleLogo{
-    width: 30%;
-  }
-  #tailleGit{
-    width: 50%;
-  }
-  #tailleOrdi{
-    width: 50%;
-  }
+@media screen and (min-width:415px) {
+    
+    body{
+      
+      #sectionProjets{  
+
+          .positionProjets{
+            position: absolute;
+            height: 19em;
+            z-index: 0;
+            
+            // style et position du 'a propos' d'arrière plan
+            p{
+                // utilisation du mixin déclaré dans _'splashscreen.scss'
+                @include styleName('arialic', 18em, normal, $lightgreen);
+                position: absolute;
+                width : 200%;
+                left : 0.8em;
+                top: -90px
+            }
+            
+            // style et position du 'a propos' premier plan
+            h1{
+                // utilisation du mixin déclaré dans _'splashscreen.scss'
+                @include styleName('azonix', 6em, normal, $white);
+                position: absolute;
+                top: 2.7em;
+                left: 4.3em;
+                
+            }
+          }
+
+          .containerSlide{
+              margin-bottom: 22em;
+              width: 100%;
+              
+              .slide{
+                  scrollbar-width: none;
+                  width: 100%;
+                  position: absolute;
+                  overflow-x: scroll;
+                  display: flex;
+                  height: 24em;
+                  gap: 30px;
+                  margin-bottom: 20px;
+                  margin: -50px 0;
+
+                  .container{
+                    img{
+                        cursor: pointer;
+                        width: 700px;
+                        transition: 500ms;
+                    }
+                    img:hover{
+                    transition: 500ms;
+                    opacity: 0.5;
+                    }
+                  }
+                  .modal{
+                    .modal-content{
+                      height: 90%;
+                    }
+                  }
+
+              }
+          }                   
+      }    
+    }    
+}
+    // .image {
+    //     opacity: 1;
+    //     display: block;
+    //     width: 100%;
+    //     height: auto;
+    //     transition: .5s ease;
+    //     backface-visibility: hidden;
+    // }
+    // .text {
+    //     background-color: $or;
+    //     color: $white;
+    //     font-size: 16px;
+    //     padding: 16px 32px;
+    // }
+    
+    // .container:hover .image {
+    //     opacity: 0.3;
+    // }
+    
+    // .container:hover .middle {
+    //     opacity: 1;
+    // }             
+    

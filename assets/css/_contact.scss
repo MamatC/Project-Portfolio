@@ -6,7 +6,7 @@
     margin-right: 10px;
 
     img{
-        width: 20%;
+        width: 10%;
         
     }
 }
@@ -24,11 +24,12 @@ form{
 
         textarea{
             width: 100%;
-            background-color: $bgblack;
+            background-color: transparent;
             color: $white;
             border-left: hidden;
             border-top: hidden;
             border-bottom:hidden;
+            border-right: 1px solid $or;
             margin-left: 10px;
             outline: none;
             font-family: 'roboto';
@@ -39,14 +40,14 @@ form{
     #contactRight{
         
         width:30%;
-        display: block;
         margin-left: 15%;
         
         input{
             width: 100%;
             text-align: right;
             color: $white;
-            background-color: $bgblack;
+            background-color: transparent;
+            border-bottom: 1px solid $or;
             border-left: hidden;
             border-top: hidden;
             border-right: hidden;
@@ -64,10 +65,31 @@ form{
             font-family: 'roboto';
             padding: 5px 10px 5px 10px;
             text-align: center;
+            float: right;
+            border-radius: 5px;
         }
         
     }
 }
 @media screen and (min-width:415px) {
 
+    body{
+        #sectionContact{
+            
+            form{
+                #message{
+                    font-size: 2.5em;
+                    
+                }
+                #contactRight{
+                    input{
+                        font-size: 2em;
+                    }
+                }
+                #btn{
+                    margin-top: 20%;
+                }
+            }
+        }
+    }    
 }

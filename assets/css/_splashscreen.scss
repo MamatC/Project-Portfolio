@@ -9,11 +9,11 @@
 
 #firstName{
     // utilisation du mixin
-    @include styleName('creattionDemo', 5em, lighter, $white);
+    @include styleName('creattionDemo', 6em, lighter, $white);
     text-transform: capitalize;
     margin: 20px 0 0 0;
     position: fixed;
-    left:24%;
+    left:19%;
     z-index: 1;
 }
 #pt-or{
@@ -32,13 +32,17 @@
     left:30%;
     z-index: 0;
 }
+
+
 @media screen and (min-width:415px){
 
     #firstName{
-        left:10%;
+        left:2%;
+        font-size: 7em;
     }
     #name{
-        left: 13%;
+        left: 5%;
+        font-size: 8.5em;
     }
 
 }

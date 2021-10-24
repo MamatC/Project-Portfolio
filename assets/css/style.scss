@@ -1,15 +1,20 @@
 
-@import './variables','./splashscreen','./cube','./aPropos','./competences','./modal','./cv','./contact','./projets';
+@import './variables','./splashscreen','./cube','./aPropos','./competences','./modal','./cv','./contact','./projects';
 
 
 body{
     margin: 0;
-    background-color: $bgblack;
+    background: $bgblack;
     a{
         text-decoration: none;
     }
 }
 
+@media screen and (min-width:415px){
+    body{
+        background : url(../images/photos/bg-pixel.jpg);
+    }
+}
 
 
 

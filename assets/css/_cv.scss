@@ -4,7 +4,7 @@ body{
 
         #containerCV{
             display: flex;
-            margin-top: 40px;
+            margin: 40% 0 20% 0;
             justify-content: flex-end;
             overflow-x: hidden;
 
@@ -22,7 +22,7 @@ body{
                     // style et position du 'CV' d'arrière plan
                     p{
                         // utilisation du mixin déclaré dans _'splashscreen.scss'
-                        @include styleName('arialic', 6em, normal, $or);
+                        @include styleName('arialic', 6em, normal, $orange);
                         position: absolute;
                         width : 200%;
                         font-size: 6em;
@@ -42,7 +42,6 @@ body{
                         text-align: center;
                         z-index: 1;
                         margin: 0 5px 0 20px;
-                        
                     }
                 }
             }    
@@ -58,6 +57,57 @@ body{
     }
 
 }
+
+//*****************RESPONSIVE WEB A PARTIR DE 415px
+
 @media screen and (min-width:415px) {
+
+    body{
+
+        section{
     
+            #containerCV{
+    
+                #titreCV{
+                    width: 60%;
+
+    
+                    //POSITIONNEMENT DU H1 CV
+                    
+                    .positionCV{
+                        height: 26em;
+                        
+                        // style et position du 'CV' d'arrière plan
+                        p{
+                            // utilisation du mixin déclaré dans _'splashscreen.scss'
+                            @include styleName('arialic', 18em, normal, $orange);
+                            margin: 0 0 0 20%;
+                            top : 80px;
+                            
+                        }
+                        
+                        // style et position du 'CV' premier plan
+                        h1{
+                            // utilisation du mixin déclaré dans _'splashscreen.scss'
+                            @include styleName('azonix', 9em, normal, $white);
+                            margin: 0 5px 0 20px;
+                            top: -50px;
+                            
+                        }
+                    }
+                }    
+                
+                // taille et positionnement de l'image CV
+                #divLeftCV{
+                        width: 40%;
+                    img{
+                        width:150%;
+                    }
+                }
+                
+            }
+    
+        }
+    
+    }
 }
